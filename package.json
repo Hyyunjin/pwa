@@ -14,7 +14,7 @@
   "dependencies": {
     "fs-extra": "^11.3.1",
     "pwa": "link:",
-    "react": "^19.1.1",
+    "react": "^19.1.2",
     "react-dom": "^19.1.1",
     "sharp": "^0.34.3"
   },
