@@ -16,6 +16,8 @@
     "pwa": "link:",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.20.0",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
