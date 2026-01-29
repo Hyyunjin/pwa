@@ -1,8 +1,12 @@
 import React from 'react'
+import SeoHelmet from '../components/SeoHelmet'
 
 const C = () => {
   return (
-    <div>C</div>
+    <div>
+
+      <SeoHelmet />
+      C</div>
   )
 }
 
