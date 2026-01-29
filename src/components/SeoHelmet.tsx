@@ -25,7 +25,7 @@ const SeoHelmet = () => {
                 ...defaultOgTags,
                 title: "출석체크 이벤트 - KOKKOK Event",
                 description: "매일 출석체크하고 보상을 받으세요",
-                image: `${window.location.origin}/a.png`,
+                image: `https://fastly.picsum.photos/id/320/1200/630.jpg?hmac=OnOvDQl9M7wkFaEZmqsRcyRr7SxwDzXuv85nDjDfRdI`,
             };
         }
 
@@ -34,7 +34,7 @@ const SeoHelmet = () => {
                 ...defaultOgTags,
                 title: "초대 리워드 - KOKKOK Event",
                 description: "친구를 초대하고 리워드를 받으세요",
-                image: `${window.location.origin}/b.png`,
+                image: `https://fastly.picsum.photos/id/951/1200/630.jpg?hmac=AGBTihOXN4rBB_xHBCR49dpUlULISr3AI3nY4M2GoCA`,
             };
 
         }
@@ -44,7 +44,7 @@ const SeoHelmet = () => {
                 ...defaultOgTags,
                 title: "룰렛 이벤트 - KOKKOK Event",
                 description: "룰렛을 돌리고 다양한 상품을 받아가세요",
-                image: `${window.location.origin}/c.png`,
+                image: `https://fastly.picsum.photos/id/488/1200/630.jpg?hmac=MEyafLlOQrl7YkxW6XVItL7r3ak3x6VLTf728Y2UWJc`,
             };
         }
 
