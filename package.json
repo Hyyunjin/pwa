@@ -10,11 +10,11 @@
     "preview": "vite preview",
     "pwa-splash-assets": "node scripts/pwa-splash-assets.js",
     "generate-assets": "pwa-assets-generator --preset minimal-2023 public/logo1024.png",
+    "prerender": "start-server-and-test preview http://localhost:4173 \"node scripts/prerender.mjs\"",
     "build:prerender": "pnpm run build && pnpm run prerender"
   },
   "dependencies": {
     "fs-extra": "^11.3.1",
-    "puppeteer": "^24.36.1",
     "pwa": "link:",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -33,7 +33,10 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "puppeteer": "^24.36.1",
     "pwa-asset-generator": "^8.0.5",
+    "sirv": "^3.0.2",
+    "start-server-and-test": "^2.1.3",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2",
