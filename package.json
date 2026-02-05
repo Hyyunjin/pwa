@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "pwa-splash-assets": "node scripts/pwa-splash-assets.js",
     "generate-assets": "pwa-assets-generator --preset minimal-2023 public/logo1024.png",
-    "prerender": "node prerender.mjs"
+    "build:prerender": "pnpm run build && pnpm run prerender"
   },
   "dependencies": {
     "fs-extra": "^11.3.1",
