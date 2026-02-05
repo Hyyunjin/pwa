@@ -6,6 +6,11 @@ const routes = ["/", "/a", "/b", "/c"];
 const distDir = path.resolve(process.cwd(), "dist");
 const baseUrl = process.env.PRERENDER_BASE_URL || "http://localhost:4173";
 
+const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    process.env.PUPPETEER_EXECUTABLE ||
+    undefined;
+
 function ensureDir(p) {
     fs.mkdirSync(p, { recursive: true });
 }
@@ -13,6 +18,7 @@ function ensureDir(p) {
 async function main() {
     const browser = await puppeteer.launch({
         headless: "new",
+        executablePath: chromePath, // ✅ 환경변수로 주입 가능하게
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 
