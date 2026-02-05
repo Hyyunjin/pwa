@@ -4,10 +4,17 @@ import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
-    react(),
+    react(), prerender({
+      routes: generatePerformanceRoutes(),
+      renderer: "@prerenderer/renderer-puppeteer",
+      rendererOptions: {
+        maxConcurrentRoutes: 1,
+        renderAfterTime: 500,
+      },
+    }),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ['logo180.png', 'pwa-192x192.png', 'pwa-512x512.png','pwa-512x512.png'],
+      includeAssets: ['logo180.png', 'pwa-192x192.png', 'pwa-512x512.png', 'pwa-512x512.png'],
       manifest: {
         short_name: "KK Delivery",
         name: "KOKKOK Delivery",
@@ -39,7 +46,7 @@ export default defineConfig({
             purpose: 'maskable'
           }
         ]
-        
+
       },
     }),
   ],

@@ -9,10 +9,12 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "pwa-splash-assets": "node scripts/pwa-splash-assets.js",
-    "generate-assets": "pwa-assets-generator --preset minimal-2023 public/logo1024.png"
+    "generate-assets": "pwa-assets-generator --preset minimal-2023 public/logo1024.png",
+    "prerender": "node prerender.mjs"
   },
   "dependencies": {
     "fs-extra": "^11.3.1",
+    "puppeteer": "^24.36.1",
     "pwa": "link:",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
