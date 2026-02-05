@@ -1,11 +1,15 @@
 import React from "react";
 
 import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
+import { matchPath, useLocation } from "react-router-dom";
 
 
 const SeoHelmet = () => {
     const { pathname } = useLocation();
+
+    const isA = !!matchPath({ path: "/a/*" }, pathname) || pathname === "/a";
+    const isB = !!matchPath({ path: "/b/*" }, pathname) || pathname === "/b";
+    const isC = !!matchPath({ path: "/c/*" }, pathname) || pathname === "/c";
 
     // pathname에 따른 OG 태그 설정
     const getOgTags = () => {
@@ -20,7 +24,7 @@ const SeoHelmet = () => {
         };
 
         // pathname에 따른 조건부 처리
-        if (pathname.includes("/a")) {
+        if (isA) {
             return {
                 ...defaultOgTags,
                 title: "출석체크 이벤트 - KOKKOK Event",
@@ -29,7 +33,7 @@ const SeoHelmet = () => {
             };
         }
 
-        if (pathname.includes("/b")) {
+        if (isB) {
             return {
                 ...defaultOgTags,
                 title: "초대 리워드 - KOKKOK Event",
@@ -39,7 +43,7 @@ const SeoHelmet = () => {
 
         }
 
-        if (pathname.includes("/c")) {
+        if (isC) {
             return {
                 ...defaultOgTags,
                 title: "룰렛 이벤트 - KOKKOK Event",

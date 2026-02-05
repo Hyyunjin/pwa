@@ -23,6 +23,7 @@ async function main() {
         console.log("[prerender]", url);
 
         await page.goto(url, { waitUntil: "networkidle0" });
+        await page.waitForSelector('meta[property="og:image"][content]', { timeout: 10000 });
 
         const html = await page.content();
 
