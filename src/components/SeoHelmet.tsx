@@ -7,9 +7,10 @@ import { matchPath, useLocation } from "react-router-dom";
 const SeoHelmet = () => {
     const { pathname } = useLocation();
 
-    const isA = !!matchPath({ path: "/a/*" }, pathname) || pathname === "/a";
-    const isB = !!matchPath({ path: "/b/*" }, pathname) || pathname === "/b";
-    const isC = !!matchPath({ path: "/c/*" }, pathname) || pathname === "/c";
+    const isA = !!matchPath("/a", pathname) || !!matchPath("/a/*", pathname);
+    const isB = !!matchPath("/b", pathname) || !!matchPath("/b/*", pathname);
+    const isC = !!matchPath("/c", pathname) || !!matchPath("/c/*", pathname);
+
 
     // pathname에 따른 OG 태그 설정
     const getOgTags = () => {

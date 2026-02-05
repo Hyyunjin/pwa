@@ -7,10 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
     "pwa-splash-assets": "node scripts/pwa-splash-assets.js",
     "generate-assets": "pwa-assets-generator --preset minimal-2023 public/logo1024.png",
-    "prerender": "start-server-and-test preview http://localhost:4173 \"node scripts/prerender.mjs\"",
+    "serve:dist": "npx sirv-cli dist --single --port 4173",
+    "prerender": "start-server-and-test serve:dist http://localhost:4173 \"node scripts/prerender.mjs\"",
     "build:prerender": "pnpm run build && pnpm run prerender"
   },
   "dependencies": {

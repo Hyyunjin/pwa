@@ -22,8 +22,27 @@ async function main() {
         const url = `${baseUrl}${route}`;
         console.log("[prerender]", url);
 
+        const expected = {
+            "/a": "id/320",
+            "/b": "id/951",
+            "/c": "id/488",
+        };
+
         await page.goto(url, { waitUntil: "networkidle0" });
-        await page.waitForSelector('meta[property="og:image"][content]', { timeout: 10000 });
+
+        if (expected[route]) {
+            await page.waitForFunction(
+                (needle) => {
+                    const el = document.querySelector('meta[property="og:image"]');
+                    const v = el?.getAttribute("content") ?? "";
+                    return v.includes(needle);
+                },
+                { timeout: 15000 },
+                expected[route]
+            );
+        } else {
+            await page.waitForSelector('meta[property="og:image"][content]', { timeout: 15000 });
+        }
 
         const html = await page.content();
 
