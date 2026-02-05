@@ -4,14 +4,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
-    react(), prerender({
-      routes: generatePerformanceRoutes(),
-      renderer: "@prerenderer/renderer-puppeteer",
-      rendererOptions: {
-        maxConcurrentRoutes: 1,
-        renderAfterTime: 500,
-      },
-    }),
+    react(),
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ['logo180.png', 'pwa-192x192.png', 'pwa-512x512.png', 'pwa-512x512.png'],
