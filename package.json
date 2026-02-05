@@ -11,7 +11,8 @@
     "generate-assets": "pwa-assets-generator --preset minimal-2023 public/logo1024.png",
     "serve:dist": "npx sirv-cli dist --single --port 4173",
     "prerender": "start-server-and-test serve:dist http://localhost:4173 \"node scripts/prerender.mjs\"",
-    "build:prerender": "pnpm run build && pnpm run prerender"
+    "install:chrome": "pnpm exec puppeteer browsers install chrome",
+    "build:prerender": "pnpm run build && pnpm run install:chrome && pnpm run prerender"
   },
   "dependencies": {
     "fs-extra": "^11.3.1",
